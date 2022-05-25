@@ -1,10 +1,10 @@
 FROM node:16-alpine as builder
 
-RUN mkdir -p /home/app
-RUN chown node:node /home/app
+RUN mkdir -p /app
+RUN chown node:node /app
 
 USER node
-WORKDIR '/home/app'
+WORKDIR '/app'
 COPY --chown=node:node ./package.json ./
 RUN npm install
 COPY --chown=node:node . .
