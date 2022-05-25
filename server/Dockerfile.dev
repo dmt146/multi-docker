@@ -1,5 +1,8 @@
 FROM node:14.14.0-alpine
 
+RUN mkdir -p /app
+RUN chown node:node /app
+
 USER node
 
 WORKDIR "/app"
