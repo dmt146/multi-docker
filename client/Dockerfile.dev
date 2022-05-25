@@ -1,8 +1,11 @@
 FROM node:16-alpine
 
+RUN mkdir -p /home/app
+RUN chown node:node /home/app
+
 USER node
 
-WORKDIR '/app'
+WORKDIR '/home/app'
 
 COPY --chown=node:node ./package.json ./
 RUN npm install
